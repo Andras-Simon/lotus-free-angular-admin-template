@@ -83,7 +83,7 @@ npm run build
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/Andras-Simon/lotus-free-angular-admin-template) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/Andras-Simon/lotus-free-angular-admin-template/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
