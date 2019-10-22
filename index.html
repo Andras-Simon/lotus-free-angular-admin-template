@@ -21,9 +21,46 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <header>
+    <div class="logo">Lotus</div>
+    <div class="search">Search...</div>
+    <div class="avatar">Logout</div>
+  </header>
 
+  <div class="menu-icon">
+    <i class="fas fa-bars">&#9776;</i>
+  </div>
+
+  <nav>
+    <div class="close-icon">
+        <i class="fas fa-times">❌</i>
+    </div>
+      <ul>
+          <li>
+              Home
+          </li>
+          <li>
+                About
+           </li>
+      </ul>
+  </nav>
+
+  <main>
+    <section>
+        <h2>Main content</h2>
+    </section>
+  </main>
+
+  <footer>
+      Created with <3 in 2019
+  </footer>
+
+  <script>
+        const sidenavEl = document.querySelector('nav');
+        const toggle = () => sidenavEl.classList.toggle('active');
+        document.querySelector('.menu-icon').addEventListener('click', toggle);
+        document.querySelector('.close-icon').addEventListener('click', toggle);
+  </script>
 </body>
 
 </html>
