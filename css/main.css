@@ -285,7 +285,7 @@ textarea {
  :root {
     --main-color: #648ca6;;
     --main-color-dark: #394263;
-    --accent-color: #8fd4d9;
+    --accent-color: #f4f7fa;
 }
 
 
@@ -312,6 +312,8 @@ header, footer {
 
 header {
   grid-area: header;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 1;
 }
 
 footer {
@@ -346,12 +348,12 @@ nav.active {
 
 nav ul {
   padding: 0;
-  margin-top: 85px;
   list-style-type: none;
 }
 nav ul li {
   padding: 20px 20px 20px 40px;
   color: #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 nav ul li:hover {
   background-color: rgba(255, 255, 255, 0.2);
@@ -369,8 +371,36 @@ nav ul li:hover {
   color: #ddd;
 }
 
-.menu-icon {
-  position: fixed;
+/* Make room for the menu icon on mobile */
+header .search {
+  margin-left: 42px;
+}
+
+header .logobar {
+  flex: 0 0 240px;
+  background: darkcyan;
+  height: 100%;
+  display: flex;
+}
+
+header .toolbar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logobar .logo {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+header .logobar .menu-icon {
+  flex: 0 0 50px;
   display: flex;
   top: 5px;
   left: 10px;
@@ -384,22 +414,11 @@ nav ul li:hover {
   color: white
 }
 
-/* Make room for the menu icon on mobile */
-header .search {
-  margin-left: 42px;
-}
-
-header .logo {
-  flex: 0 0 240px;
-  background: darkcyan;
-  height: 100%;
-}
-
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 46.875em) {
     /* Show the sidenav */
     body {
-        grid-template-columns: 240px 1fr; /* Show the side nav for non-mobile screens */
+        grid-template-columns: 0fr 10fr; /* Show the side nav for non-mobile screens */
         grid-template-areas:
         "header header"
         "nav main"
@@ -411,7 +430,27 @@ header .logo {
         position: relative;
         transform: translateX(0);
     }
+    nav.active {
+      transform: translateX(-200px);
+      text-align: end;
+      
+    }
+
+    nav.active span {
+      color: transparent;
+    }
+
+
+    nav.active span:after {
+      content: attr(data-first);
+      color: white;
+    }
+
     .close-icon {
       visibility: hidden;
+    }
+
+    nav ul {
+      margin-top: 0px;
     }
 }
