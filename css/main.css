@@ -283,9 +283,13 @@ textarea {
      ========================================================================== */
 
  :root {
-    --main-color: #648ca6;;
-    --main-color-dark: #394263;
+    --main-color: #343a40;
+    --main-color-dark: #f8f9fa;
     --accent-color: #f4f7fa;
+
+    --navbar-width: 320px;
+
+    --margin: 1rem;
 }
 
 
@@ -314,15 +318,24 @@ header {
   grid-area: header;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   z-index: 1;
+  color: white;
 }
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+  }
 
 footer {
   grid-area: footer;
+  color: white;
+  padding-left: var(--margin);
+  padding-left: var(--margin);
 }
 
 main {
   grid-area: main;
-  background-color: var(--accent-color);
 }
 
 nav {
@@ -331,12 +344,10 @@ nav {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 240px;
     position: fixed;
     overflow-y: auto;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
     z-index: 2; /* Needs to sit above the hamburger menu icon */
-    background-color: #394263;
     transform: translateX(-245px);
     transition: all .6s ease-in-out;
 }
@@ -373,12 +384,15 @@ nav ul li:hover {
 
 /* Make room for the menu icon on mobile */
 header .search {
-  margin-left: 42px;
+  flex: 1;
 }
 
+header .avatar {
+    flex: 0 0 200px;
+  }
+
 header .logobar {
-  flex: 0 0 240px;
-  background: darkcyan;
+  flex: 0 0 var(--navbar-width);
   height: 100%;
   display: flex;
 }
@@ -390,13 +404,19 @@ header .toolbar {
   justify-content: space-between;
 }
 
-header .logobar .logo {
+header .logobar .logo  {
   flex: 1;
   display: flex;
   justify-content: left;
   align-items: center;
-  color: #fff;
   font-size: 1rem;
+}
+
+header .logobar .logo a  {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    color: #fff;
 }
 
 header .logobar .menu-icon {
@@ -414,11 +434,30 @@ header .logobar .menu-icon {
   color: white
 }
 
+nav a {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  nav a .feather {
+    margin-right: 4px;
+    color: #999;
+  }
+  
+  nav a.active {
+    color: #007bff;
+  }
+  
+  nav a:hover .feather,
+  nav a.active .feather {
+    color: inherit;
+  }
+
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 46.875em) {
     /* Show the sidenav */
     body {
-        grid-template-columns: 0fr 10fr; /* Show the side nav for non-mobile screens */
+        grid-template-columns: var(--navbar-width) 10fr; /* Show the side nav for non-mobile screens */
         grid-template-areas:
         "header header"
         "nav main"
@@ -431,19 +470,7 @@ header .logobar .menu-icon {
         transform: translateX(0);
     }
     nav.active {
-      transform: translateX(-200px);
-      text-align: end;
-      
-    }
-
-    nav.active span {
-      color: transparent;
-    }
-
-
-    nav.active span:after {
-      content: attr(data-first);
-      color: white;
+      transform: translateX(calc( -1 * var(--navbar-width)));
     }
 
     .close-icon {
