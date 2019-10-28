@@ -1,0 +1,24 @@
+{
+  "name": "lotus-free-admin-template",
+  "version": "1.0.0",
+  "description": "Lotus UI is a free Angular 2+ admin dashboard template",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andras-Simon/lotus-free-angular-admin-template.git"
+  },
+  "author": "Andras Simon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andras-Simon/lotus-free-angular-admin-template/issues"
+  },
+  "homepage": "https://github.com/Andras-Simon/lotus-free-angular-admin-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.0",
+    "postcss-cli": "^6.1.3"
+  }
+}
