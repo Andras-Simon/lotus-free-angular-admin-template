@@ -5,10 +5,21 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
-    "lint": "eslint src/js",
-    "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/main.js && uglifyjs src/js/*.js -m -c -o dist/js/main.min.js",
-    "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js'"
+    "autoprefixer": "postcss -u autoprefixer -d dist/css/ ./css",
+    "lint": "eslint js",
+    "uglify": "mkdir -p dist/js && terser js/*.js -m -o dist/js/main.js && terser js/*.js -m -c -o dist/js/main.min.js",
+    "imagemin": "imagemin images dist/images -p",
+    "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js, dist/*.html' --startPath 'dist/'",
+    "build:init": "mkdir -p dist",
+    "build:html": "htmlmin index.html -o dist/index.html",
+    "build:css": "npm run autoprefixer",
+    "build:js": "npm run lint && npm run uglify",
+    "build:images": "npm run imagemin",
+    "build": "npm  run build:init && npm run build:html && npm run build:css && npm run build:js && npm run build:images",
+    "watch:css": "onchange 'css/*.css' -- npm run build:css",
+    "watch:js": "onchange 'js/*.js' -- npm run build:js",
+    "watch:html": "onchange '*.html' -- npm run build:html",
+    "watch": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js' 'npm run watch:html'"
   },
   "repository": {
     "type": "git",
@@ -29,7 +40,12 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "htmlmin": "0.0.7",
+    "imagemin-cli": "^5.0.0",
+    "onchange": "^6.1.0",
+    "parallelshell": "^3.0.1",
     "postcss-cli": "^6.1.3",
+    "terser": "^4.3.9",
     "uglify-js": "^3.6.4"
   }
 }
