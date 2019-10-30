@@ -133,6 +133,11 @@
   .menu__item {
     padding: .5rem 1rem;
     border-bottom: var(--menu-item-separator-color);
+    margin-right: 1px;
+  }
+
+  .menu__item:hover {
+    background-color: var(--menu-item-hover-color);
   }
   
   .menu__link {
