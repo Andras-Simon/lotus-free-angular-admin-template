@@ -150,6 +150,45 @@
   .menu__item:hover {
     background-color: var(--menu-item-hover-color);
   }
+
+  .menu__item--collapsible.active {
+    background-color: var(--menu-item-hover-color);
+  }
+
+  .menu__item--collapsible:before {
+    content: '⨞';
+    position: absolute;
+    right: 15px;
+    transform: rotateZ(00deg);
+    transition: all .5s ease-in-out;
+  }
+
+  .menu__item--collapsible.active:before {
+    transform: rotateZ(-90deg);
+    transition: all .5s ease-in-out;
+  }
+
+  .submenu__body {
+    list-style-type: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+  }
+
+  .submenu__body.active {
+    max-height: 100vh;
+  }
+
+  .menu__subitem {
+    padding: .5rem 1rem;
+    border-bottom: var(--menu-item-separator-color);
+    margin-right: 1px;
+  }
+
+  .menu__subitem:hover {
+    background-color: var(--menu-item-hover-color);
+  }
   
   .menu__link {
     color: var(--menu-item-link-color);
