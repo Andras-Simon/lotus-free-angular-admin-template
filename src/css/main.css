@@ -129,7 +129,18 @@
     list-style-type: none;
     padding: 0;
   }
-  
+
+    
+  .menu__heading {
+    padding: .5rem 1rem;
+    margin-right: 1px;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0.5rem;
+    color: var(--menu-heading-color);
+  }
+
   .menu__item {
     padding: .5rem 1rem;
     border-bottom: var(--menu-item-separator-color);
