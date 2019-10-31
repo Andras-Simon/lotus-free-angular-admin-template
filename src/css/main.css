@@ -54,6 +54,62 @@
   .header__toolbar {
     flex: 1;
   }
+  
+  .containerx div {
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .red,
+  .orange,
+  .yellow,
+  .blue,
+  .green,
+  .purple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Flexbox Fallback */
+  
+  .yellow {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 60px;
+    color: white;
+  }
+  
+  .blue + .blue {
+    margin-left: 1em;
+  }
+
+  
+  @supports (display: grid) {
+  
+    .yellow {
+      display: grid;
+      grid-template: 
+          '📝 👾 💁🏻‍' /
+          auto 1fr auto;
+      height: 60px;
+      width: 100%;
+    }
+  
+    .green {
+      grid-area: 📝;
+    }
+  
+    .blue + .blue{
+      margin-left: 1em;
+    }
+  
+    .orange {
+      grid-area: 💁🏻‍;
+    }
+  }
 
   .header__search {
         padding: .75rem 1rem;
