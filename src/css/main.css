@@ -13,27 +13,20 @@
 
   .header {
     grid-area: header;
-    display: -webkit-box;
     display: flex;
-    -webkit-box-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     background: var(--header-bg);
     box-shadow: var(--header-shadow);
     z-index: 10;
   }
   
   .header__menu-open {
-    -webkit-box-flex: 0;
-            flex: 0 0 var(--menu-open-width);
-    display: -webkit-box;
+    flex: 0 0 var(--menu-open-width);
     display: flex;
     height: 100%;
-    -webkit-box-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
     cursor: pointer;
     padding: 12px;
@@ -42,13 +35,10 @@
   }
   
   .header__logo {
-    display: -webkit-box;
     display: flex;
     height: 100%;
-    -webkit-box-align: center;
-            align-items: center;
-    -webkit-box-flex: 0;
-            flex: 0 0 calc(var(--menu-width) - var(--menu-open-width));
+    align-items: center;
+    flex: 0 0 calc(var(--menu-width) - var(--menu-open-width));
     background-color: var(--header-logo-bg)
   }
   
@@ -62,8 +52,7 @@
   }
   
   .header__toolbar {
-    -webkit-box-flex: 1;
-            flex: 1;
+    flex: 1;
   }
 
   .header__search {
@@ -78,12 +67,9 @@
   }
   
   .footer {
-    display: -webkit-box;
     display: flex;
-    -webkit-box-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     grid-area: footer;
     background-color: var(--footer-bg);
     color: var(--footer-color);
@@ -103,26 +89,20 @@
   .menu {
     grid-area: menu;
     background-color: var(--menu-bg);
-    display: -webkit-box;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
             flex-direction: column;
     height: 100%;
     position: fixed;
     overflow-y: auto;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     z-index: 2; /* Needs to sit above the hamburger menu icon */
-    -webkit-transform: translateX(calc( -1 * var(--menu-width)));
-            transform: translateX(calc( -1 * var(--menu-width)));
-    -webkit-transition: all .6s ease-in-out;
+    transform: translateX(calc( -1 * var(--menu-width)));
     transition: all .6s ease-in-out;
     width: var(--menu-width);
   }
 
   .menu.active {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   
   .menu__body {
@@ -231,16 +211,12 @@
     visibility: visible;
     cursor: pointer;
     font-size: 20px;
-    -webkit-box-flex: 0;
-            flex: 0 0 50px;
-    display: -webkit-box;
+    flex: 0 0 50px;
     display: flex;
     top: 0px;
     right: 0px;
-    -webkit-box-align: center;
-            align-items: center;
-    -webkit-box-pack: right;
-            justify-content: right;
+    align-items: center;
+    justify-content: right;
     border-radius: 10%;
     z-index: 1;
     padding: 12px;
@@ -270,14 +246,12 @@
         .menu {
             position: static;
             grid-area: menu;
-            -webkit-transform: translateX(0);
-                    transform: translateX(0);
+            transform: translateX(0);
             width: var(--menu-width)
         }
     
         .menu.active {
-          -webkit-transform: translateX(calc( -1 * var(--menu-width)));
-                  transform: translateX(calc( -1 * var(--menu-width)));
+          transform: translateX(calc( -1 * var(--menu-width)));
           width: 0px;
         }
 
