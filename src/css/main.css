@@ -79,6 +79,13 @@
     margin-left: 1em;
   }
 
+  .header__avatar--image {
+    border-radius: 50em;
+    margin: 0em 1em;
+    width: 2em;
+    cursor: pointer;
+  }
+
   .header__menu {
     margin-top: 0px;
     margin-bottom: 0px;
