@@ -10,6 +10,7 @@
         --header-logo-bg: transparent;
         --header-link-color: var(--font-color);
         --header-link-color-hover: var(--font-color);
+        --header-height: 50px;
     
         --footer-bg: #343a40;
         --footer-color: var(--font-color);

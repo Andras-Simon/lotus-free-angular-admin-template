@@ -53,61 +53,70 @@
   
   .header__toolbar {
     flex: 1;
-  }
-  
-  .containerx div {
-    font-family: monospace;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .red,
-  .orange,
-  .yellow,
-  .blue,
-  .green,
-  .purple {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
-  /* Flexbox Fallback */
-  
-  .yellow {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    height: 60px;
-    color: white;
+
+  .header__toolbar a {
+    color: var(--header-font-color);
+  }
+
+  .header__toolbar a:hover {
+    text-decoration: none;
   }
   
-  .blue + .blue {
+  .header__avatar,
+  .header__menuitem,
+  .header__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__avatar {
+    margin-right: 1em;
     margin-left: 1em;
   }
 
+  .header__menu {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
   
+  /* Flexbox Fallback */
+  
+  .header__toolbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: var(--header-heigth);
+  }
+  
+  .header__menuitem + .header__menuitem {
+    margin-left: 1em;
+  }
+
+
   @supports (display: grid) {
   
-    .yellow {
+    .header__toolbar {
       display: grid;
-      grid-template: 
-          '📝 👾 💁🏻‍' /
-          auto 1fr auto;
-      height: 60px;
+      grid-template: "menu empty avatar" / auto 1fr auto;
+      height: var(--header-heigth);
       width: 100%;
     }
   
-    .green {
-      grid-area: 📝;
+    .header__menu {
+      grid-area: menu;
     }
   
-    .blue + .blue{
+    .header__menuitem + .header__menuitem {
       margin-left: 1em;
     }
   
-    .orange {
-      grid-area: 💁🏻‍;
+    .header__avatar {
+      grid-area: avatar;
     }
   }
 
@@ -291,7 +300,7 @@
         .my-container {
             display: grid;
             grid-template-columns: auto 1fr;
-            grid-template-rows: 50px 1fr 50px;
+            grid-template-rows: var(--header-height) 1fr 50px;
             grid-template-areas: 
               "header header"
               "menu   main"
