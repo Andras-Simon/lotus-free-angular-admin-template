@@ -41,11 +41,11 @@ $ npm install
 ## Usage
 
 ``` bash
-# serve with hot reload at localhost:4200.
-$ ng serve
+# serve with hot reload at localhost:3000.
+$ npm run watch
 
 # build for production with minification
-$ ng build
+$ npm run build
 ```
 
 ## What's included
