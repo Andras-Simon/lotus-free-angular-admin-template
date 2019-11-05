@@ -72,8 +72,14 @@
 }
 
 .header__avatar {
+    position: relative;
     margin-right: 1em;
     margin-left: 1em;
+    cursor: pointer;
+}
+
+.header__avatar:hover {
+    min-height: 100px;
 }
 
 .header__avatar--image {
@@ -83,9 +89,32 @@
     cursor: pointer;
 }
 
+.header__avatar .header__usermenu {
+    display: none;
+    width: 200px;
+
+    position: absolute;
+    background-color: var(--usermenu-bg);
+    top: 75px;
+    right: 0px;
+    box-shadow: var(--usermenu-shadow)
+}
+
+.header__avatar:hover .header__usermenu {
+    display: block;
+}
+
+.header__usermenu a {
+    color: var(--usermenu-link-color);
+    padding: .5rem 1rem;
+    border-bottom: var(--menu-item-separator-color);
+
+}
+
 .header__menu {
     margin-top: 0px;
     margin-bottom: 0px;
+
 }
 
 
