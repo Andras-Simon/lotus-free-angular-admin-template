@@ -46,6 +46,9 @@ $ npm run watch
 
 # build for production with minification
 $ npm run build
+
+# build pages with the content of the page-contents directory
+$ npm run generate-page <pagename>
 ```
 
 ## What's included
