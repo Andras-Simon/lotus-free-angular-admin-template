@@ -11,7 +11,7 @@
     "imagemin": "imagemin src/images/* --out-dir=dist/images -p",
     "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js, dist/*.html' --startPath 'dist/'",
     "build:init": "mkdir -p dist && cp src/favicon.ico dist/favicon.ico && cp src/site.webmanifest dist/site.webmanifest",
-    "build:html": "htmlmin src/index.html -o dist/index.html",
+    "build:html": "htmlmin src/index.html -o dist/index.html; cp -r src/pages/. dist/pages",
     "build:css": "npm run autoprefixer",
     "build:js": "npm run lint && npm run uglify",
     "build:images": "npm run imagemin",
