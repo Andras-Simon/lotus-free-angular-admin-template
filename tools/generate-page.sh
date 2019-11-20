@@ -1,19 +1,11 @@
 #!/bin/bash
-
-FILE="$1"
-
-if [ -z "$1" ]
-  then
-    echo "No argument supplied. Usage: generate-page.sh filename.html"
-    exit 1;
-fi
-
-if [ ! -f "./src/page-contents/$FILE" ]; then
-    echo "./src/page-contents/$FILE not found!"
-    exit 1;
-fi
-
-sed "/<!-- CONTENT -->/{
+pwd=`pwd`
+dir="$pwd/src/page-contents"
+for filename in `cd ${dir};ls -1 ${filename}`; do
+    echo $filename
+    sed "/<!-- CONTENT -->/{
     s/<!-- CONTENT -->//g
-    r ./src/page-contents/$FILE
-}" ./src/empty.html > ./src/pages/$FILE
+    r ./src/page-contents/$filename
+}" ./src/empty.html > ./src/pages/$filename
+done
+cp ./src/empty.html ./src/pages/empty.html 
